@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Common-->
+    <dimen name="common_margin">20dp</dimen>
+    <dimen name="common_margin_medium">16dp</dimen>
+    <dimen name="common_margin_medium_s">13dp</dimen>
+    <dimen name="common_margin_small">10dp</dimen>
+    <dimen name="common_margin_small_s">7dp</dimen>
+    <dimen name="common_margin_micro">5dp</dimen>
+    <dimen name="common_margin_micro_s">3dp</dimen>
+    <dimen name="common_margin_micro_ss">1dp</dimen>
+    <dimen name="common_row_height">56dp</dimen>
+    <dimen name="common_row_height_s">48dp</dimen>
+    <dimen name="common_row_height_ss">44dp</dimen>
+
+    <dimen name="common_line_size_s">0.5dp</dimen>
+    <dimen name="common_line_size">1dp</dimen>
+
+    <!-- Text Size -->
+    <dimen name="text_micro">10sp</dimen>
+    <dimen name="text_small">12sp</dimen>
+    <dimen name="text_medium">14sp</dimen>
+    <dimen name="text_large">15sp</dimen>
+    <dimen name="text_super_large">17sp</dimen>
+
+    <dimen name="time_table_item_height">4dp</dimen>
+
+</resources>

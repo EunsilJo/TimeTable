@@ -1,0 +1,62 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!--Text Styles-->
+    <style name="textMicro">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/text_micro</item>
+    </style>
+    <style name="textMicro.bold" parent="textMicro">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="textSmall">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/text_small</item>
+    </style>
+    <style name="textSmall.bold" parent="textSmall">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="textMedium">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/text_medium</item>
+    </style>
+    <style name="textMedium.bold" parent="textMedium">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="textLarge">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/text_large</item>
+    </style>
+    <style name="textLarge.bold" parent="textLarge">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="textSuperLarge">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/text_super_large</item>
+    </style>
+    <style name="textSuperLarge.bold" parent="textSuperLarge">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+</resources>

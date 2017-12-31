@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#1976d2</color>
+    <color name="colorPrimaryDark">#004ba0</color>
+    <color name="colorAccent">#63a4ff</color>
+
+    <color name="color_table_1">#007fe4</color>
+    <color name="color_table_2">#5B399E</color>
+    <color name="color_table_3">#FF9923</color>
+    <color name="color_table_4">#e63c23</color>
+    <color name="color_table_5">#f03158</color>
+    <color name="color_table_6">#1bc1ed</color>
+    <color name="color_table_7">#88d533</color>
+
+    <color name="color_table_1_light">#cce5fa</color>
+    <color name="color_table_2_light">#ded9f1</color>
+    <color name="color_table_3_light">#ffeacc</color>
+    <color name="color_table_4_light">#fad8d3</color>
+    <color name="color_table_5_light">#fcd6de</color>
+    <color name="color_table_6_light">#d1f3fb</color>
+    <color name="color_table_7_light">#e7f7d6</color>
+
+    <array name="colors_table">
+        <item>@color/color_table_1</item>
+        <item>@color/color_table_2</item>
+        <item>@color/color_table_3</item>
+        <item>@color/color_table_4</item>
+        <item>@color/color_table_5</item>
+        <item>@color/color_table_6</item>
+        <item>@color/color_table_7</item>
+    </array>
+
+    <array name="colors_table_light">
+        <item>@color/color_table_1_light</item>
+        <item>@color/color_table_2_light</item>
+        <item>@color/color_table_3_light</item>
+        <item>@color/color_table_4_light</item>
+        <item>@color/color_table_5_light</item>
+        <item>@color/color_table_6_light</item>
+        <item>@color/color_table_7_light</item>
+    </array>
+
+</resources>

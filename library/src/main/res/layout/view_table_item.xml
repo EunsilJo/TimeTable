@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/common_row_height_s"
+        android:padding="@dimen/common_margin_micro">
+
+        <TextView
+            android:id="@+id/txtTime"
+            style="@style/textMicro"
+            android:textColor="@color/color_gray"
+            android:includeFontPadding="false"/>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/common_line_size_s"
+        android:layout_gravity="bottom"
+        android:background="@color/color_gray_grid" />
+</FrameLayout>

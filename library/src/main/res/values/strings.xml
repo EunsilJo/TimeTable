@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">TimeTableLib</string>
+    <string name="time_table_format_time_h">%1$02d</string>
+    <string name="time_table_format_time_h_m">%1$02d:%2$02d</string>
+</resources>
