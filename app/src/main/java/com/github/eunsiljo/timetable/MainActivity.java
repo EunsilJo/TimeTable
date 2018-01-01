@@ -1,8 +1,11 @@
 package com.github.eunsiljo.timetable;
 
 import android.app.Activity;
+import android.content.res.TypedArray;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.TextView;
@@ -19,6 +22,9 @@ import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,7 +33,12 @@ public class MainActivity extends AppCompatActivity {
 
     private ArrayList<TimeTableData> mShortSamples = new ArrayList<>();
     private ArrayList<TimeTableData> mLongSamples = new ArrayList<>();
-    
+
+    private List<String> mTitles = Arrays.asList("Korean", "English", "Math", "Science", "Physics", "Chemistry", "Biology");
+    private List<String> mLongHeaders =  Arrays.asList("Plan", "Do");
+    private List<String> mShortHeaders = Arrays.asList("Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat");
+
+    private long mNow = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,11 +63,14 @@ public class MainActivity extends AppCompatActivity {
                 if(v.isActivated()){
                     timeTable.setShowHeader(false);
                     timeTable.setTableMode(TimeTableView.TableMode.SHORT);
-                    timeTable.setTimeTable(getMillis("2017-11-10 00:00:00"), mShortSamples);
+                    //timeTable.setTimeTable(getMillis("2017-11-10 00:00:00"), mShortSamples);
+                    timeTable.setTimeTable(mNow, getSamples(mNow, mShortHeaders, mTitles));
+
                 }else{
                     timeTable.setShowHeader(true);
                     timeTable.setTableMode(TimeTableView.TableMode.LONG);
-                    timeTable.setTimeTable(getMillis("2017-11-10 00:00:00"), mLongSamples);
+                    //timeTable.setTimeTable(getMillis("2017-11-10 00:00:00"), mLongSamples);
+                    timeTable.setTimeTable(mNow, getSamples(mNow, mLongHeaders, mTitles));
                 }
             }
         });
@@ -73,13 +87,53 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initData(){
-        initLongSamples();
-        initShortSamples();
+        //initLongSamples();
+        //initShortSamples();
 
         timeTable.setStartHour(4);
         timeTable.setShowHeader(true);
         timeTable.setTableMode(TimeTableView.TableMode.LONG);
-        timeTable.setTimeTable(getMillis("2017-11-10 00:00:00"), mLongSamples);
+
+        DateTime now = DateTime.now();
+        mNow = now.withTimeAtStartOfDay().getMillis();
+
+        //timeTable.setTimeTable(getMillis("2017-11-10 00:00:00"), mLongSamples);
+        timeTable.setTimeTable(mNow, getSamples(mNow, mLongHeaders, mTitles));
+    }
+
+    private ArrayList<TimeTableData> getSamples(long date, List<String> headers, List<String> titles){
+        int[] colors_table = getResources().getIntArray(R.array.colors_table);
+        int[] colors_table_light = getResources().getIntArray(R.array.colors_table_light);
+
+        ArrayList<TimeTableData> tables = new ArrayList<>();
+        for(int i=0; i<headers.size(); i++){
+            ArrayList<TimeData> values = new ArrayList<>();
+            DateTime start = new DateTime(date);
+            DateTime end = start.plusMinutes((int)((Math.random() * 10) + 1) * 30);
+            for(int j=0; j<titles.size(); j++){
+                int color = colors_table_light[j];
+                int textColor = R.color.black;
+                //TEST
+                if(headers.size() == 2 && i == 1){
+                    color = colors_table[j];
+                    textColor = R.color.white;
+                }
+
+                TimeData timeData = new TimeData(j, titles.get(j), color, textColor, start.getMillis(), end.getMillis());
+
+                //TEST
+                if(headers.size() == 2 && j == 2){
+                    timeData.setShowError(true);
+                }
+                values.add(timeData);
+
+                start = end.plusMinutes((int)((Math.random() * 10) + 1) * 10);
+                end = start.plusMinutes((int)((Math.random() * 10) + 1) * 30);
+            }
+
+            tables.add(new TimeTableData(headers.get(i), values));
+        }
+        return tables;
     }
 
     private void initLongSamples(){

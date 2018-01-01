@@ -117,7 +117,7 @@ public class TimeTableGridItemViewHolder extends RecyclerView.ViewHolder{
             RecyclerView.LayoutParams lp = (RecyclerView.LayoutParams) itemView.getLayoutParams();
             lp.height = mContext.getResources().getDimensionPixelSize(R.dimen.time_table_item_height) * activate.getRowCount();
             itemView.setLayoutParams(lp);
-            itemView.setBackgroundResource(colorRes);
+            itemView.setBackgroundColor(colorRes);
         }
     }
 }

@@ -15,7 +15,7 @@ public class TimeData<T> {
     private T key;
     private boolean showError = false;
 
-    public TimeData(T key, String title, int colorRes, long startMills, long stopMills) {
+    public TimeData(T key, String title, @ColorRes int colorRes, long startMills, long stopMills) {
         this.key = key;
         this.title = title;
         this.colorRes = colorRes;
@@ -24,7 +24,7 @@ public class TimeData<T> {
     }
 
     public TimeData(T key, String title,
-                    int colorRes, @ColorRes int textColorRes, long startMills, long stopMills) {
+                    @ColorRes int colorRes, @ColorRes int textColorRes, long startMills, long stopMills) {
         this.key = key;
         this.title = title;
         this.colorRes = colorRes;
@@ -34,7 +34,7 @@ public class TimeData<T> {
     }
 
     public TimeData( T key, String title,
-                     int colorRes, @ColorRes int textColorRes, long startMills, long stopMills,
+                     @ColorRes int colorRes, @ColorRes int textColorRes, long startMills, long stopMills,
                      boolean showError) {
         this.colorRes = colorRes;
         this.textColorRes = textColorRes;
