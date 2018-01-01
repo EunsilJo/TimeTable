@@ -102,8 +102,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private ArrayList<TimeTableData> getSamples(long date, List<String> headers, List<String> titles){
-        int[] colors_table = getResources().getIntArray(R.array.colors_table);
-        int[] colors_table_light = getResources().getIntArray(R.array.colors_table_light);
+        TypedArray colors_table = getResources().obtainTypedArray(R.array.colors_table);
+        TypedArray colors_table_light = getResources().obtainTypedArray(R.array.colors_table_light);
 
         ArrayList<TimeTableData> tables = new ArrayList<>();
         for(int i=0; i<headers.size(); i++){
@@ -111,11 +111,11 @@ public class MainActivity extends AppCompatActivity {
             DateTime start = new DateTime(date);
             DateTime end = start.plusMinutes((int)((Math.random() * 10) + 1) * 30);
             for(int j=0; j<titles.size(); j++){
-                int color = colors_table_light[j];
+                int color = colors_table_light.getResourceId(j, 0);
                 int textColor = R.color.black;
                 //TEST
                 if(headers.size() == 2 && i == 1){
-                    color = colors_table[j];
+                    color = colors_table.getResourceId(j, 0);
                     textColor = R.color.white;
                 }
 
